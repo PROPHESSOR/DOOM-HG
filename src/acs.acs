@@ -1,0 +1,14 @@
+#include "zcommon.acs"
+
+Script 2994 (void) { // Sentries
+	SetActorState(0, "Unmount");
+}
+
+Script 2997 (void) { // Dispensers
+	SetActorState(0, "Reloading");
+}
+
+Script 3100 (void) { // 0 - allow; 1 - deny
+	print(s:"33100");
+	SetResultValue(0); 
+}
