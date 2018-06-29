@@ -18,7 +18,7 @@ Actor SentryBox : CustomInventory 15019 {
     Stop
   Use:
     // TNT1 A 0 A_JumpIf(ACS_ExecuteWithResult(3100,0,0,0) == 1 ,"Nope")
-    TNT1 A 1 A_SpawnItemEx("SentryGun2",56,0,8,0,0,0,0,1)
+    TNT1 A 1 A_SpawnItemEx("SentryGun",56,0,8,0,0,0,0,1)
     Stop
   // Nope:
 	//  TNT1 A 0 A_Print("Can't use this inventory now!")
