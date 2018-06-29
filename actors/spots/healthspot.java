@@ -1,5 +1,5 @@
 Actor SummonerSpot 15033 {
-    //$Category "Summoner"
+    //$Category Summoner
     //$Title Summoner spot
     //$Sprite DRANA2
     Health 400

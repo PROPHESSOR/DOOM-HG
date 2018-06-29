@@ -1,6 +1,6 @@
 // TODO: Можно проще через константу dropitem
-Actor SmallArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor SmallArmorSpot : SummonerSpot 15039 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -14,8 +14,8 @@ Actor SmallArmorSpot : SummonerSpot %ID% {
     }
 }
 
-Actor MediumArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor MediumArmorSpot : SummonerSpot 15040 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -29,8 +29,8 @@ Actor MediumArmorSpot : SummonerSpot %ID% {
     }
 }
 
-Actor LargeArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor LargeArmorSpot : SummonerSpot 15041 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -44,8 +44,8 @@ Actor LargeArmorSpot : SummonerSpot %ID% {
     }
 }
 
-Actor ExtraArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor ExtraArmorSpot : SummonerSpot 15042 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -59,8 +59,8 @@ Actor ExtraArmorSpot : SummonerSpot %ID% {
     }
 }
 
-Actor GreenArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor GreenArmorSpot : SummonerSpot 15043 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -73,8 +73,8 @@ Actor GreenArmorSpot : SummonerSpot %ID% {
             Goto See
     }
 }
-Actor BlueArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor BlueArmorSpot : SummonerSpot 15044 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -87,8 +87,8 @@ Actor BlueArmorSpot : SummonerSpot %ID% {
             Goto See
     }
 }
-Actor RedArmorSpot : SummonerSpot %ID% {
-    //$Category "Summoner/Health"
+Actor RedArmorSpot : SummonerSpot 15045 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
     States {
@@ -102,17 +102,12 @@ Actor RedArmorSpot : SummonerSpot %ID% {
     }
 }
 
-Actor RegenSpot : SummonerSpot 15038 {
-    //$Category "Summoner/Health"
+Actor RandomArmorSpot : RandomSpawner 15046 {
+    //$Category "Summoner/Armor"
     //$Title Small health spot
     //$Sprite DRANA2
-    States {
-
-        Mine:
-            TNT1 A 0 A_JumpIf(user_count >= 40,"Stopping")
-            TNT1 A 0 A_SetUserVar("user_count",user_count+1)
-            TNT1 A 0 A_Stop
-            TNT1 A 0 A_SpawnItemEx("PortableMedkit", random(0, 2), random(0, 2), 24, 0, 0, random(2,5), random(0,359))
-            Goto See
-    }
+    DropItem ""
+    DropItem "GreenArmor"
+    DropItem "BlueArmor"
+    DropItem "RedArmor"
 }
