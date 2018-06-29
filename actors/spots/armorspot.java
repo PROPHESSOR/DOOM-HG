@@ -1,7 +1,7 @@
 // TODO: Можно проще через константу dropitem
 Actor SmallArmorSpot : SummonerSpot 15039 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Small armor spot
     //$Sprite DRANA2
     States {
 
@@ -16,7 +16,7 @@ Actor SmallArmorSpot : SummonerSpot 15039 {
 
 Actor MediumArmorSpot : SummonerSpot 15040 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Medium armor spot
     //$Sprite DRANA2
     States {
 
@@ -31,7 +31,7 @@ Actor MediumArmorSpot : SummonerSpot 15040 {
 
 Actor LargeArmorSpot : SummonerSpot 15041 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Large armor spot
     //$Sprite DRANA2
     States {
 
@@ -46,7 +46,7 @@ Actor LargeArmorSpot : SummonerSpot 15041 {
 
 Actor ExtraArmorSpot : SummonerSpot 15042 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Extra armor spot
     //$Sprite DRANA2
     States {
 
@@ -61,7 +61,7 @@ Actor ExtraArmorSpot : SummonerSpot 15042 {
 
 Actor GreenArmorSpot : SummonerSpot 15043 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Green armor spot
     //$Sprite DRANA2
     States {
 
@@ -75,7 +75,7 @@ Actor GreenArmorSpot : SummonerSpot 15043 {
 }
 Actor BlueArmorSpot : SummonerSpot 15044 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Blue armor spot
     //$Sprite DRANA2
     States {
 
@@ -89,7 +89,7 @@ Actor BlueArmorSpot : SummonerSpot 15044 {
 }
 Actor RedArmorSpot : SummonerSpot 15045 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Red armor spot
     //$Sprite DRANA2
     States {
 
@@ -104,7 +104,7 @@ Actor RedArmorSpot : SummonerSpot 15045 {
 
 Actor RandomArmorSpot : RandomSpawner 15046 {
     //$Category "Summoner/Armor"
-    //$Title Small health spot
+    //$Title Random armor spot
     //$Sprite DRANA2
     DropItem ""
     DropItem "GreenArmor"

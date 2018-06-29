@@ -1,7 +1,7 @@
 // TODO: Можно проще через константу dropitem
 Actor SmallAmmoSpot : SummonerSpot 15047 {
     //$Category "Summoner/Ammo"
-    //$Title Small health spot
+    //$Title Small ammo spot
     //$Sprite DRANA2
     States {
 
@@ -15,7 +15,7 @@ Actor SmallAmmoSpot : SummonerSpot 15047 {
 }
 Actor BackpackSpot : SummonerSpot 15048 {
     //$Category "Summoner/Ammo"
-    //$Title Small health spot
+    //$Title Backpack spot
     //$Sprite DRANA2
     States {
 

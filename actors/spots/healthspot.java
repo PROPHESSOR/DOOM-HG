@@ -1,5 +1,5 @@
 Actor SummonerSpot 15033 {
-    //$Category "Summoner"
+    //$Category Summoner
     //$Title Summoner spot
     //$Sprite DRANA2
     Health 400
@@ -50,7 +50,7 @@ Actor SmallHealthSpot : SummonerSpot 15034 {
 
 Actor MediumHealthSpot : SummonerSpot 15035 {
     //$Category "Summoner/Health"
-    //$Title Small health spot
+    //$Title Medium health spot
     //$Sprite DRANA2
     States {
 
@@ -65,7 +65,7 @@ Actor MediumHealthSpot : SummonerSpot 15035 {
 
 Actor LargeHealthSpot : SummonerSpot 15036 {
     //$Category "Summoner/Health"
-    //$Title Small health spot
+    //$Title Large health spot
     //$Sprite DRANA2
     States {
 
@@ -80,7 +80,7 @@ Actor LargeHealthSpot : SummonerSpot 15036 {
 
 Actor MedikitSpot : SummonerSpot 15037 {
     //$Category "Summoner/Health"
-    //$Title Small health spot
+    //$Title Medikit spot
     //$Sprite DRANA2
     States {
 
@@ -95,7 +95,7 @@ Actor MedikitSpot : SummonerSpot 15037 {
 
 Actor RegenSpot : SummonerSpot 15038 {
     //$Category "Summoner/Health"
-    //$Title Small health spot
+    //$Title Regen spot
     //$Sprite DRANA2
     States {
 
