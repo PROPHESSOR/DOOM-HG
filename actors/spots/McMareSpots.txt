@@ -1,0 +1,30 @@
+Actor HealthTypeSummonSpot 15033 {
+    //$Category Summoners
+    //$Title Summoner spot
+    //$Sprite DRANA2
+    Var int user_count;
+	Args 1, 5, 0
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump( Args[ 2 ], "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", Random( Args[ 0 ], Args[ 1 ] ) )
+	SpawnLoop:
+		TNT1 A 0 A_JumpIf( user_count == 0, "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", user_count - 1 )
+		TNT1 A 0 A_Jump( 255, 1, 2, 3 )
+		TNT1 A 0 A_SpawnItemEx( "Medikit", Random( -5, 5 ), Random( -5, 5 ), 
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Loop
+		TNT1 A 0 A_SpawnItemEx( "Stimpack", Random( -5, 5 ), Random( -5, 5 ),
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Loop
+		TNT1 A 0 A_SpawnItemEx( "HealthBonus", Random( -5, 5 ), Random( -5, 5 ),
+ 								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Loop
+	Death:
+		TNT1 A 0
+		Stop
+	}
+}
