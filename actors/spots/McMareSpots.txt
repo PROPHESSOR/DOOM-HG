@@ -1,6 +1,6 @@
 Actor HealthTypeSummonSpot 15033 {
-    //$Category Summoners
-    //$Title Summoner spot
+    //$Category Health summon spots
+    //$Title Random health summon spot
     //$Sprite DRANA2
     Var int user_count;
 	Args 1, 5, 0
@@ -23,6 +23,105 @@ Actor HealthTypeSummonSpot 15033 {
 		TNT1 A 0 A_SpawnItemEx( "HealthBonus", Random( -5, 5 ), Random( -5, 5 ),
  								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
 		Loop
+	Death:
+		TNT1 A 0
+		Stop
+	}
+}
+
+Actor MedikitSummonSpot: HealthTypeSummonSpot 15034
+{
+    //$Category Health summon spots
+    //$Title Medikit summon spot
+    //$Sprite DRANA2
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump( Args[ 2 ], "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", Random( Args[ 0 ], Args[ 1 ] ) )
+	SpawnLoop:
+		TNT1 A 0 A_JumpIf( user_count == 0, "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", user_count - 1 )
+		TNT1 A 0 A_SpawnItemEx( "Medikit", Random( -5, 5 ), Random( -5, 5 ), 
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Loop
+	}
+}
+
+Actor StimpackSummonSpot: HealthTypeSummonSpot 15035
+{
+    //$Category Health summon spots
+    //$Title Stimpack summon spot
+    //$Sprite DRANA2
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump( Args[ 2 ], "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", Random( Args[ 0 ], Args[ 1 ] ) )
+	SpawnLoop:
+		TNT1 A 0 A_JumpIf( user_count == 0, "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", user_count - 1 )
+		TNT1 A 0 A_SpawnItemEx( "Stimpack", Random( -5, 5 ), Random( -5, 5 ), 
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Loop
+	}
+}
+
+Actor HealthBonusSummonSpot: HealthTypeSummonSpot 15036
+{
+    //$Category Health summon spots
+    //$Title Health bonus summon spot
+    //$Sprite DRANA2
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Jump( Args[ 2 ], "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", Random( Args[ 0 ], Args[ 1 ] ) )
+	SpawnLoop:
+		TNT1 A 0 A_JumpIf( user_count == 0, "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", user_count - 1 )
+		TNT1 A 0 A_SpawnItemEx( "HealthBonus", Random( -5, 5 ), Random( -5, 5 ), 
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Loop
+	}
+}
+
+Actor HealthTypeBitmaskSummonSpot 15037 {
+    //$Category Health summon spots
+    //$Title Random hp summoner (bitmask)
+    //$Sprite DRANA2
+    Var int user_count;
+	Args 1, 5, 0, 255
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf( !( Args[ 3 ] & 7 ), 1 )
+		Goto Spawn + 4
+		TNT1 A 0 A_SetArg( 3, 255 )
+		TNT1 A 0 A_Jump( Args[ 2 ], "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", Random( Args[ 0 ], Args[ 1 ] ) )
+	SpawnLoop:
+		TNT1 A 0 A_JumpIf( user_count == 0, "Death" )
+		TNT1 A 0 A_SetUserVar( "user_count", user_count - 1 )
+	SpawnJump:
+		TNT1 A 1 A_Log( "SpawnJump" )
+		TNT1 A 0 A_Jump( 255, 1, 3, 5 )
+		TNT1 A 0 A_JumpIf( !( Args[ 3 ] & 1 ), "SpawnJump" )
+		TNT1 A 0 A_SpawnItemEx( "Medikit", Random( -5, 5 ), Random( -5, 5 ), 
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Goto SpawnLoop
+		TNT1 A 0 A_JumpIf( !( Args[ 3 ] & 2 ), "SpawnJump" )
+		TNT1 A 0 A_SpawnItemEx( "Stimpack", Random( -5, 5 ), Random( -5, 5 ),
+								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Goto SpawnLoop
+		TNT1 A 0 A_JumpIf( !( Args[ 3 ] & 4 ), "SpawnJump" )
+		TNT1 A 0 A_SpawnItemEx( "HealthBonus", Random( -5, 5 ), Random( -5, 5 ),
+ 								24, Random( -2, 2 ), Random( -2, 2 ), Random( 0, 3 ) )
+		Goto SpawnLoop
 	Death:
 		TNT1 A 0
 		Stop
