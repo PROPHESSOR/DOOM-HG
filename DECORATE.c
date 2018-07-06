@@ -6,7 +6,9 @@
 #include "actors/spots/healthspot.java"
 #include "actors/spots/armorspot.java"
 #include "actors/spots/ammospot.java"
-#include "actors/spots/McMareSpots.txt"
+#include "actors/spots/BitmaskSpots.txt"
+
+//#include "actors/spots/McMareSpots.txt"
 
 #include "actors/items/test.java"
 
